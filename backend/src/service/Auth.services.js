@@ -5,7 +5,7 @@ export const register = async (userData) => {
   const { name, email, password, role } = userData;
 
   // check is user already user exists
-  const existingUser = await User.UserfindOne({ email });
+  const existingUser = await User.findOne({ email });
   if (existingUser) {
     throw new Error("User already exists");
   }

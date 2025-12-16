@@ -3,7 +3,8 @@ import dotenv from "dotenv";
 import connectDb from "./config/db.js";
 import bookRoutes from "./routes/book.route.js";
 import userRoutes from "./routes/User.route.js";
-import authRoutes from "./routes/auth.route.js"
+import authRoutes from "./routes/auth.route.js";
+import authorRoutes from "./routes/author.route.js";
 dotenv.config();
 
 const app = express();
@@ -12,6 +13,7 @@ const app = express();
 app.use(express.json());
 
 // Routes
+app.use("/api/author",authorRoutes)
 app.use("/api/auth",authRoutes);
 app.use("/api/book", bookRoutes);
 app.use("/api/user",userRoutes)
