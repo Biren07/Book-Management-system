@@ -10,17 +10,17 @@ export const getBooksService = async () => {
   return await Book.find();
 };
 // get book by Id
-export const getBookbyIdServices = async (id) => {
-  return await Book.findById();
+export const getBookByIdService = async (id) => {
+  return await Book.findById(id);
 };
 
 // update book
 
-export const updateBooksServices = async (id, data) => {
+export const updateBookService = async (id, data) => {
   return await Book.findByIdAndUpdate(id, data, { new: true });
 };
 
 // delete book
-export const deleteBookservices = async (id) => {
+export const deleteBookService= async (id) => {
   return await Book.findByIdAndDelete(id);
 };

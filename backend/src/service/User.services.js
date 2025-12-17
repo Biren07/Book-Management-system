@@ -17,10 +17,21 @@ export const getUserById = async (id) => {
 };
 
 // update user
-export const updateUser = async (id, data) => {
+export const updateUserServices= async (id, data) => {
   return await User.findByIdAndUpdate(id, data, { new: true });
 };
+//upadte UserImageProfile
+export const updateUserProfileImage = async (id, imageUrl) => {
+  return await User.findByIdAndUpdate(
+    id,
+    { profileImage: imageUrl },
+    {
+      new: true,
+      select: "-password",
+    }
+  );
+};
 // delete User
-export const deleteUser = async (id) => {
+export const deleteUserServices= async (id) => {
   return await User.findByIdAndDelete(id);
 };

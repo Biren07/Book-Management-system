@@ -5,6 +5,7 @@ import bookRoutes from "./routes/book.route.js";
 import userRoutes from "./routes/User.route.js";
 import authRoutes from "./routes/auth.route.js";
 import authorRoutes from "./routes/author.route.js";
+import borrowRoute from "./routes/borrow.route.js"
 dotenv.config();
 
 const app = express();
@@ -13,10 +14,11 @@ const app = express();
 app.use(express.json());
 
 // Routes
-app.use("/api/author",authorRoutes)
+app.use("/api/borrow",borrowRoute);
+app.use("/api/author",authorRoutes);
 app.use("/api/auth",authRoutes);
 app.use("/api/book", bookRoutes);
-app.use("/api/user",userRoutes)
+app.use("/api/user",userRoutes);
 
 // Health check
 app.get("/", (req, res) => {
